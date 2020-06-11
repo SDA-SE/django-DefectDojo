@@ -107,9 +107,10 @@ flot-axis@markrcote/flot-axislabels#*:
   version "0.0.0"
   resolved "https://codeload.github.com/markrcote/flot-axislabels/tar.gz/a181e09d04d120d05e5bc2baaa8738b5b3670428"
 
-flot@flot/flot#~0.8.3:
-  version "0.8.3"
-  resolved "https://codeload.github.com/flot/flot/tar.gz/453b017cc5acfd75e252b93e8635f57f4196d45d"
+flot@flot/flot#~4.2.1:
+  version "4.2.1"
+  uid b6ca777f75d0750201c91b12ebc1c914d0e2cc12
+  resolved "https://codeload.github.com/flot/flot/tar.gz/b6ca777f75d0750201c91b12ebc1c914d0e2cc12"
 
 font-awesome@^4.0.0:
   version "4.7.0"

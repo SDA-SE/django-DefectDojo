@@ -60,8 +60,8 @@ django:
     repository: defectdojo/defectdojo-django
     resources:
       requests:
-        cpu: 100m
-        memory: 128Mi
+        cpu: 300m
+        memory: 256Mi
 
 initializer:
   run: true

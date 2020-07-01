@@ -26,7 +26,7 @@ celery:
     resources:
       requests:
         cpu: 100m
-        memory: 128Mi
+        memory: 256Mi
     tolerations: []
   worker:
     affinity: {}
@@ -37,7 +37,7 @@ celery:
     resources:
       requests:
         cpu: 100m
-        memory: 128Mi
+        memory: 256Mi
     tolerations: []
 
 django:
@@ -61,7 +61,7 @@ django:
     resources:
       requests:
         cpu: 300m
-        memory: 256Mi
+        memory: 328Mi
 
 initializer:
   run: true

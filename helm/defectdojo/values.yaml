@@ -61,7 +61,7 @@ django:
     resources:
       requests:
         cpu: 300m
-        memory: 328Mi
+        memory: 512Mi
 
 initializer:
   run: true

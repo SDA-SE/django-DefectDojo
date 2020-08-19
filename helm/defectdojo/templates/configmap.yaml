@@ -27,7 +27,7 @@ data:
   DD_UWSGI_ENDPOINT: /run/uwsgi.sock
   DD_UWSGI_HOST: localhost
   DD_UWSGI_PASS: unix:///run/uwsgi.sock
-{{- if .Values.sso.azuread.enable }}
+{{- if .Values.sso.azuread.enabled }}
   DD_SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_ENABLED: true
   DD_SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_KEY: {{ .Values.sso.azuread.key | quote }}
   DD_SOCIAL_AUTH_AZUREAD_TENANT_OAUTH2_TENANT_ID: {{ .Values.sso.azuread.id | quote }}

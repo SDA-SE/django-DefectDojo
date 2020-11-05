@@ -1,6 +1,16 @@
 ---
 # Global settings
-createSecret: true
+# Global settings
+# create defectdojo specific secret
+createSecret: false
+# create rabbitmq secret in defectdojo chart, outside of rabbitmq chart
+createRabbitMqSecret: false
+# create redis secret in defectdojo chart, outside of redis chart
+createRedisSecret: false
+# create mysql secret in defectdojo chart, outside of mysql chart
+createMysqlSecret: false
+# create postgresql secret in defectdojo chart, outside of postgresql chart
+createPostgresqlSecret: false
 ## Configuration value to select database type
 ## Option to use "postgresql" or "mysql" database type, by default "mysql" is chosen
 ## Set the "enable" field to true of the database type you select (if you want to use internal database) and false of the one you don't select
@@ -26,14 +36,20 @@ celery:
   repository: defectdojo/defectdojo-django
   logLevel: DEBUG
   beat:
+    annotations: {}
     affinity: {}
     nodeSelector: {}
+    replicas: 1
     resources:
       requests:
         cpu: 100m
         memory: 256Mi
+      limits:
+        cpu: 2000m
+        memory: 256Mi
     tolerations: []
   worker:
+    annotations: {}
     affinity: {}
     repository: defectdojo/defectdojo-django
     logLevel: DEBUG
@@ -43,7 +59,19 @@ celery:
       requests:
         cpu: 100m
         memory: 256Mi
+      limits:
+        cpu: 2000m
+        memory: 256Mi
     tolerations: []
+    app_settings:
+      pool_type: solo
+      # Performance improved celery worker config when needing to deal with a lot of findings (e.g deduplication ops)
+      # Comment out the "solo" line, and uncomment the following lines.
+      # pool_type: prefork
+      # autoscale_min: 2
+      # autoscale_max: 8
+      # concurrency: 8
+      # prefetch_multiplier: 128
 
 django:
   annotations: {}
@@ -73,10 +101,15 @@ initializer:
   run: true
   repository: defectdojo/defectdojo-django
   keepSeconds: 60
+  affinity: {}
+  nodeSelector: {}  
   resources:
     requests:
       cpu: 100m
       memory: 128Mi
+    limits:
+      cpu: 2000m
+      memory: 256Mi
 
 mysql:
   enabled: true

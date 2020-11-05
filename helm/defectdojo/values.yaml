@@ -30,7 +30,7 @@ admin:
   mail: admin@defectdojo.local
   secretKey:
   credentialAes256Key:
-  metricsHttpAuthPassword:
+  metricsHttpAuthPassword: "Thieghohoh7chiKno9ahshooThohqu"
 
 monitoring:
   enabled: false
@@ -184,14 +184,14 @@ rabbitmq:
   rabbitmq:
     password: ""
     erlangCookie: ""
-    existingPasswordSecret: defectdojo-rabbitmq-specific
-    existingErlangSecret: defectdojo-rabbitmq-specific
+    existingPasswordSecret: defectdojo-rabbitmq
+    existingErlangSecret: defectdojo-rabbitmq
     affinity: {}
     nodeSelector: {}
 
 redis:
   enabled: false
-  existingSecret: defectdojo-redis-specific
+  existingSecret: defectdojo-redis
   secretKey: redis-password
   password: ""
   cluster:

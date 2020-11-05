@@ -53,3 +53,26 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+  Builds the repository names for use with local or private registries
+*/}}
+{{- define "celery.repository" -}}
+{{- printf "%s" .Values.repositoryPrefix -}}/defectdojo-django
+{{- end -}}
+
+{{- define "django.nginx.repository" -}}
+{{- printf "%s" .Values.repositoryPrefix -}}/defectdojo-nginx
+{{- end -}}
+
+{{- define "django.uwsgi.repository" -}}
+{{- printf "%s" .Values.repositoryPrefix -}}/defectdojo-django
+{{- end -}}
+
+{{- define "initializer.repository" -}}
+{{- printf "%s" .Values.repositoryPrefix -}}/defectdojo-django
+{{- end -}}
+
+{{- define "initializer.jobname" -}}
+{{ .Release.Name }}-initializer-{{- printf "%s" now | date "2006-01-02-15-04" -}}
+{{- end -}}

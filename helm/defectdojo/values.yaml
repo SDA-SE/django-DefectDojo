@@ -15,6 +15,11 @@ admin:
   lastName: User
   mail: admin@defectdojo.local
 
+monitoring:
+  enabled: false
+
+annotations: {}
+
 # Components
 celery:
   broker: rabbitmq
@@ -41,6 +46,7 @@ celery:
     tolerations: []
 
 django:
+  annotations: {}
   affinity: {}
   ingress:
     enabled: true

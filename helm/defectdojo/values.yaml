@@ -197,6 +197,14 @@ redis:
   cluster:
     slaveCount: 1
 
+sso:
+  azuread:
+    enabled: false
+    key: azure_ad_application_id
+    secret: azure_ad_client_secret
+    id: azure_ad_directory_id
+    resource: https://graph.microsoft.com/
+
 # To add extra variables not predefined by helm config it is possible to define in extraConfigs block, e.g. below:
 # NOTE  Do not store any kind of sensitive information inside of it
 # extraConfigs:

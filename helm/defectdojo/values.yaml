@@ -156,6 +156,7 @@ postgresql:
   replication:
     enabled: false
   service:
+   annotations: {}
   # To use an external PostgreSQL instance, set enabled to false and uncomment
   # the line below:
   postgresServer: "127.0.0.1"
@@ -199,7 +200,7 @@ redis:
 
 sso:
   azuread:
-    enabled: false
+    enabled: true
     key: azure_ad_application_id
     secret: azure_ad_client_secret
     id: azure_ad_directory_id

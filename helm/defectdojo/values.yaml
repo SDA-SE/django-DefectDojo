@@ -185,8 +185,8 @@ rabbitmq:
   rabbitmq:
     password: ""
     erlangCookie: ""
-    existingPasswordSecret: defectdojo-rabbitmq
-    existingErlangSecret: defectdojo-rabbitmq
+    existingPasswordSecret: defectdojo-rabbitmq-specific
+    existingErlangSecret: defectdojo-rabbitmq-specific
     affinity: {}
     nodeSelector: {}
 

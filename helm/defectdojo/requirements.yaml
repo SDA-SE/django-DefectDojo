@@ -1,8 +1,4 @@
 dependencies:
-  - name: mysql
-    version: 1.6.9
-    repository: "@stable"
-    condition: mysql.enabled
   - name: postgresql
     version: 9.8.11
     repository: "@bitnami"

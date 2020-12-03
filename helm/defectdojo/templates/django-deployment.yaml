@@ -57,7 +57,7 @@ spec:
         - name: run
           mountPath: /run/defectdojo
         ports:
-        - name: http
+        - name: uwsgi
           protocol: TCP
           containerPort: 8081
         envFrom:
@@ -100,7 +100,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /login?next=/
-            port: http
+            port: uwsgi
             httpHeaders:
             - name: Host
               value: {{ .Values.host }}
